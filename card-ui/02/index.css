@@ -1,0 +1,78 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: rgba(0, 0, 0, 0.89);
+	display: grid;
+	min-height: 100vh;
+	place-content: center;
+	grid-template-columns: auto auto;
+	gap: 2rem;
+	line-height: 1.6;
+	font-size: 16px;
+}
+.card {
+	padding: 8rem 0 0;
+	max-width: 35ch;
+	color: #fff;
+	background-image: url(../../images/card-ui/card-bg-01.jpg);
+	background-size: cover;
+	background-position: 35% 0%;
+	border-radius: 1rem;
+	overflow: hidden;
+	transition: .5s ease;
+}
+.card:nth-child(2) {
+	background-image: url(../../images/card-ui/card-bg-02.jpg);
+	background-position: 50% 0%;
+}
+.card:hover {
+	transform: scale(1.1);
+}
+.card-content {
+	padding: 2rem;
+	background-color: transparent;
+	transform: translateY(65%);
+	transition: .5s ease;			
+}
+.card:hover .card-content {
+	transform: translateY(0);
+	background: linear-gradient(to top, #000 10%, rgba(0, 0, 0, 0.363) 90%);
+}
+.card-title {
+	position: relative;
+	text-transform: capitalize;
+	width: max-content;
+}
+.card-title:after {
+	content: '';
+	position: absolute;
+	left: calc(2rem * -1);
+	bottom: -4px;
+	width: calc(100% + 2rem);
+	height: 4px;
+	background-color: #00c1b2;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: .5s ease;
+	transition-delay: .2s;
+}
+.card:hover .card-title:after {
+	transform: scaleX(1);
+}
+.card-body {
+	color: rgba(255, 255, 255, 0.8);
+}
+.btn {
+	cursor: pointer;
+	display: inline;
+	padding: .5rem 1.25rem;
+	border-radius: .25em;
+	background-color: #00c1b2;
+	color: #000;
+}
+.btn:hover,
+.btn:focus {
+	background-color: #fff;
+	color: #01a799;
+}
